@@ -1,0 +1,372 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/user:
+    get:
+      summary: ''
+      operationId: getApiUser
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/todos:
+    get:
+      summary: ''
+      operationId: getApiTodos
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  current_page: 1
+                  data:
+                    -
+                      id: 1
+                      title: 'First Todo list'
+                      details: 'Details of the first todo'
+                      status: not_started
+                      created_at: '2024-12-10T23:40:53.000000Z'
+                      updated_at: '2024-12-10T23:48:37.000000Z'
+                    -
+                      id: 2
+                      title: 'Second Todo list'
+                      details: 'Details of the second todo'
+                      status: in_progress
+                      created_at: '2024-12-10T23:42:21.000000Z'
+                      updated_at: '2024-12-10T23:51:06.000000Z'
+                    -
+                      id: 4
+                      title: 'Third Todo list'
+                      details: 'Details of the third todo'
+                      status: completed
+                      created_at: '2024-12-10T23:57:11.000000Z'
+                      updated_at: '2024-12-10T23:57:11.000000Z'
+                    -
+                      id: 5
+                      title: 'Fourth Todo list'
+                      details: 'Details of the fourth todo'
+                      status: in_progress
+                      created_at: '2024-12-10T23:57:53.000000Z'
+                      updated_at: '2024-12-10T23:57:53.000000Z'
+                  first_page_url: 'http://localhost/api/todos?page=1'
+                  from: 1
+                  last_page: 1
+                  last_page_url: 'http://localhost/api/todos?page=1'
+                  links:
+                    -
+                      url: null
+                      label: '&laquo; Previous'
+                      active: false
+                    -
+                      url: 'http://localhost/api/todos?page=1'
+                      label: '1'
+                      active: true
+                    -
+                      url: null
+                      label: 'Next &raquo;'
+                      active: false
+                  next_page_url: null
+                  path: 'http://localhost/api/todos'
+                  per_page: 10
+                  prev_page_url: null
+                  to: 4
+                  total: 4
+                properties:
+                  current_page:
+                    type: integer
+                    example: 1
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        title: 'First Todo list'
+                        details: 'Details of the first todo'
+                        status: not_started
+                        created_at: '2024-12-10T23:40:53.000000Z'
+                        updated_at: '2024-12-10T23:48:37.000000Z'
+                      -
+                        id: 2
+                        title: 'Second Todo list'
+                        details: 'Details of the second todo'
+                        status: in_progress
+                        created_at: '2024-12-10T23:42:21.000000Z'
+                        updated_at: '2024-12-10T23:51:06.000000Z'
+                      -
+                        id: 4
+                        title: 'Third Todo list'
+                        details: 'Details of the third todo'
+                        status: completed
+                        created_at: '2024-12-10T23:57:11.000000Z'
+                        updated_at: '2024-12-10T23:57:11.000000Z'
+                      -
+                        id: 5
+                        title: 'Fourth Todo list'
+                        details: 'Details of the fourth todo'
+                        status: in_progress
+                        created_at: '2024-12-10T23:57:53.000000Z'
+                        updated_at: '2024-12-10T23:57:53.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        title:
+                          type: string
+                          example: 'First Todo list'
+                        details:
+                          type: string
+                          example: 'Details of the first todo'
+                        status:
+                          type: string
+                          example: not_started
+                        created_at:
+                          type: string
+                          example: '2024-12-10T23:40:53.000000Z'
+                        updated_at:
+                          type: string
+                          example: '2024-12-10T23:48:37.000000Z'
+                  first_page_url:
+                    type: string
+                    example: 'http://localhost/api/todos?page=1'
+                  from:
+                    type: integer
+                    example: 1
+                  last_page:
+                    type: integer
+                    example: 1
+                  last_page_url:
+                    type: string
+                    example: 'http://localhost/api/todos?page=1'
+                  links:
+                    type: array
+                    example:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost/api/todos?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    items:
+                      type: object
+                      properties:
+                        url:
+                          type: string
+                          example: null
+                        label:
+                          type: string
+                          example: '&laquo; Previous'
+                        active:
+                          type: boolean
+                          example: false
+                  next_page_url:
+                    type: string
+                    example: null
+                  path:
+                    type: string
+                    example: 'http://localhost/api/todos'
+                  per_page:
+                    type: integer
+                    example: 10
+                  prev_page_url:
+                    type: string
+                    example: null
+                  to:
+                    type: integer
+                    example: 4
+                  total:
+                    type: integer
+                    example: 4
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiTodos
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: yrpenybzpwch
+                  nullable: false
+                details:
+                  type: string
+                  description: ''
+                  example: nobis
+                  nullable: true
+                status:
+                  type: string
+                  description: ''
+                  example: completed
+                  nullable: true
+                  enum:
+                    - not_started
+                    - in_progress
+                    - completed
+              required:
+                - title
+      security: []
+  '/api/todos/{id}':
+    get:
+      summary: ''
+      operationId: getApiTodosId
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  id: 1
+                  title: 'First Todo list'
+                  details: 'Details of the first todo'
+                  status: not_started
+                  created_at: '2024-12-10T23:40:53.000000Z'
+                  updated_at: '2024-12-10T23:48:37.000000Z'
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  title:
+                    type: string
+                    example: 'First Todo list'
+                  details:
+                    type: string
+                    example: 'Details of the first todo'
+                  status:
+                    type: string
+                    example: not_started
+                  created_at:
+                    type: string
+                    example: '2024-12-10T23:40:53.000000Z'
+                  updated_at:
+                    type: string
+                    example: '2024-12-10T23:48:37.000000Z'
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiTodosId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: nvls
+                  nullable: true
+                details:
+                  type: string
+                  description: ''
+                  example: in
+                  nullable: true
+                status:
+                  type: string
+                  description: ''
+                  example: not_started
+                  nullable: true
+                  enum:
+                    - not_started
+                    - in_progress
+                    - completed
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiTodosId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the todo.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/todos/search:
+    get:
+      summary: ''
+      operationId: getApiTodosSearch
+      description: ''
+      parameters: []
+      responses:
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'No query results for model [App\Models\Todo] search'
+                properties:
+                  message:
+                    type: string
+                    example: 'No query results for model [App\Models\Todo] search'
+      tags:
+        - Endpoints
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''
